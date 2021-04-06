@@ -1,0 +1,159 @@
+﻿(Türkçe)
+(ref ve out anahtar kelimelerini bilmeyen birine nasıl anlatırdınız?)
+
+Değer Tipler :
+Değer tipleri, veriyi tutan değişken türleridir. Değer tipli bir değişken tanımlandığında, değişkenin taşıdığı verinin kopyası, hafızada 'stack' adı verilen bir
+alana yerleştirilir. Boolean, decimal, float, integer,double gibi sayısal veri tipleri değer tiplerdir.
+
+"
+int a = 5;    //değer tip
+int b = 7;    //değer tip
+b = a;
+a = 10;
+Console.WriteLine(b);
+"
+
+Yukarıdaki örnekte, b = 5 olacaktır. Çünkü; a ve b değişkenleri değer tipleri olarak belirtilmiştir. "b = a" yazıldığı zaman, b değişkeninin değeri o anki a
+değişkeninin değerini eşit olur ve bellekte 'b = 7' verisi silinerek 'b = 5' verisi oluşturulur ve bu verinin a ile ilişkisi kesilir. Çünkü; değer tiplerde,
+değişkenin değeri ile ilgilenilir. Bu yüzden 'a = 10 ' kodu daha sonrasında b değişkeninin değerine etki etmez.
+
+Referans Tipler :
+Referans tipleri, veri yerine verinin bellekteki adresini tutan değişken türleridir. Referans tipli bir değişken tanımlandığında, değişkenin bellekteki adresi,
+hafızada 'heap' adı verilen bir alana yerleştirilir. Diziler, klasslar, arayüzler referans tiplere örnektir.
+
+"
+int[] sayilar1 = new int[]{1,2,3};        //referans tip
+int[] sayilar2 = new int[]{10,20,30};     //referans tip
+sayilar1 = sayilar2;
+sayilar2[0] = 99;
+Console.WriteLine(sayilar1[0]);
+"
+
+Bu örnekte, sayilar1 dizisinin birinci elemanı '99' olacaktır. "sayilar1 = sayilar2" yazıldıktan sonra, artık sayilar1 ve sayilar2 dizileri de, bellekte daha önce
+belirtilmiş sayilar2 dizisinin adresini referans alırlar. Bu yüzden, bundan sonra sayilar1 veya sayilar2 dizilerinin üzerinde yapılan herhangi bir değişiklik,
+iki diziyede etki edecektir.
+
+ref Anahtarı :
+Değer tiplerin referans tipler gibi kullanılmasını sağlar. Herhangi bir metot içine gönderilen referans tip, değerlerinde yapılan tüm değişiklikleri metot dışına
+da yansıtır. ref anahtarını kullanmadan önce, metotun içinde geçirilen parametreyi daha önceden tanımlamış olmak gerekir.
+
+"
+static void Main()
+{
+	int sayi1 = 20;
+	int sayi2 = 50;
+	var sonuc = Topla(ref sayi1, sayi2);
+	Console.WriteLine(sayi1);
+}
+
+static int Topla(ref int say1, int say2)
+{
+	say1 = 30;
+	return say1 + say2;
+}
+"
+
+Yukarıdaki kod sonrası, ekranımızda sayi1 değerimiz olarak '30' gözükecektir. Çünkü; ref anahtarı ile Topla metotu içine gönderilen sayi1 değişkenimiz, metot içinde
+yapılan değişikleri dışarıya yansıtacaktır.
+
+out Anahtarı :
+İşlevleri, ref anahtarı ile aynıdır. Aradaki tek fark, out anahtarı için, değişken metot içine gönderilmeden önce tanımlanmış olması gerekmez.
+
+"
+static void Main()
+{
+	int sayi2 = 50;
+	var sonuc = Topla(out sayi1, sayi2);
+	Console.WriteLine(sayi1);
+}
+
+static int Topla(out int say1, int say2)
+{
+	say1 = 30;
+	return say1 + say2;
+}
+"
+
+Örnekte görüldüğü üzere, ref anahtarı yerine out anahtarı ile kod yazılır. Burada dikkat etmemiz gereken nokta ise, sayi1 değişkeninin daha önce tanımlanmamış
+oluşudur. Topla metotunun içinde yazılan "say1 = 30" kodu ile sayi1 değeri böylelikle atanmış olur.
+
+
+(English)
+(How would you describe it to someone who doesn't know the ref and out keywords?)
+
+Value Types : 
+A value type variable is constant data which contains the data, instead of a reference to it. They are typically stored in memory area known as the stack.
+The stack is where data does not need to exist for long lives. Value types often have short lives. Numerical data types are value types as integer, decimal,
+float, double, boolean.
+
+"
+int a = 5;    //value type
+int b = 7;    //value type
+b = a;
+a = 10;
+Console.WriteLine(b);
+"
+
+The result of the above example is "b = 5". Because; a and b are integers which are value types. When you write "b = a" , the value of variable 'b' will be equal to
+'5' of the value of variable 'a' at the moment, and there will be no longer relative between the stack of variable 'b' and the stack of variable 'a'. Then, when you
+change the value of 'a', the changes will not effect the value of 'b' anywhere.
+
+Reference Types :
+A reference type variable contains a reference to data stored in memory area know as the heap. The heap is the most often used for data that need to exist.
+Arrays, classes, interfaces are examples of reference types.
+
+"
+int[] numbers1 = new int[]{1,2,3};        //reference type
+int[] numbers2 = new int[]{10,20,30};     //reference type
+numbers1 = numbers2;
+numbers2[0] = 99;
+Console.WriteLine(numbers1[0]);
+"
+
+The answer is "numbers1[0] = 99". In the above example, when you write "numbers1 = numbers2", numbers1 and numbers2 will point to the same object in memory heap.
+If we change numbers2, we will also change b. Because; numbers1 and numbers2 are not storing the data, they are storing the reference to the location where the
+data is stored.
+
+ref Keyword :
+The 'ref' keyword changes value types to reference types. A reference type passed into a method will have any changes made to its values reflected outside the 
+method. Before using ref keyword, you have to initialize the parameter that you pass inside the method.
+
+"
+static void Main()
+{
+	int num1 = 20;
+	int num2 = 50;
+	var result = Add(ref num1, num2);
+	Console.WriteLine(num1);
+}
+
+static int Add(ref int number1, int number2)
+{
+	number1 = 30;
+	return number1 + number2;
+}
+"
+
+The above result is equal to 80 and the value of num1 is 30. Because; using the ref keyword changes the value type of num1 to reference type of number1. The any
+changes on number1 effect the value of num1 outside the method.
+
+out Keyword :
+The 'out' keyword is like 'ref' keyword. But, you don't have to initialize a parameter before using it. However, you have to initialize  the parameter inside the
+method. There is an example below:
+
+"
+static void Main()
+{
+	int num2 = 50;
+	var result = Add(out num1, num2);
+	Console.WriteLine(num1);
+}
+
+static int Add(out int number1, int number2)
+{
+	int number1 = 30;
+	return number1 + number2;
+}
+"
+
+As seen in the example, num1 is not initialized while number1 is initialized in Add method. 
