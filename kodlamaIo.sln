@@ -37,6 +37,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day5", "Day5", "{C4C28413-B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameProjectDemo", "Day5\GameProjectDemo\GameProjectDemo.csproj", "{49F84E4B-A7AD-40B9-980F-14945BD29BE4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day6", "Day6", "{14F1D33B-BE74-4935-8D5F-C9551890879D}"
+	ProjectSection(SolutionItems) = preProject
+		Day6\Day6Sample2.sql = Day6\Day6Sample2.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
