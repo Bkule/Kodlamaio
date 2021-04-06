@@ -1,0 +1,55 @@
+﻿(Türkçe)
+(C# dilinde dictionary yapısını araştırınız. Bilmeyen birine dictionary yapısını anlatsaydanızi nasıl anlatırdınız?)
+
+Dictionary<TKey,TValue> şeklinde karşımıza çıkar. Bir dizi anahtar ve bir dizi değer arasında eşleşme yapılmasını sağlar. Sözlüğe her bir ekleme bir değerden ve 
+bu değere bağlı anahtardan oluşur. Her bir değerin, farklı bir anahtarı olmalıdır.
+Aşağıda birkaç komut yazalım.
+
+"
+Dictionary<string,string> dict = new Dictionary<string,string> ();
+
+dict.Add("key", "value");
+// Sözlüğe "key" anahtarını ve "value" değerini ekler.
+
+dict["key"] = "newvalue";
+// Anahtara karşılık gelen değeri, yeni değer yapar. Eğer anahtar yoksa, sözlüğe anahtarı ve değeri ile birlikte ekler.
+
+dict.Keys;
+//Sözlükteki anahtarları çağırır.
+
+dict.Values;
+//Sözlükteki değerleri çağırır.
+
+dict.Remove("key");
+//Sözlükten anahtar ve değerini siler.
+"
+
+
+
+
+
+(English)
+(Search the dictionary structure in C # language. How would you describe the dictionary structure to someone who does not know?)
+
+The Dictionary <TKey,TValue> generic class provides a mapping from a set of keys to a set of values. Each addition to the dictionary consists of a value and its
+associated key. Each values must have another keys.
+Let's learn some comments below.
+
+"
+Dictionary<string,string> dict = new Dictionary<string,string> ();
+
+dict.Add("key", "value");
+// Adds the specified key and value to the dictionary.
+
+dict["key"] = "newvalue";
+// Change the value associated with the key. If a key does not exist, setting the indexer for that key and adds a new key/value pair.
+
+dict.Keys;
+// Gets a collection containing the keys.
+
+dict.Values;
+// Gets a collection containing the values.
+
+dict.Remove("key");
+// Removes the value with the specified key from dictionary.
+"

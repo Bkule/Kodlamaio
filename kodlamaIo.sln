@@ -26,6 +26,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day3", "Day3", "{C321E8B9-F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassMethodDemo", "Day3\ClassMethodDemo\ClassMethodDemo.csproj", "{1F7C995E-7FF6-4AE8-9902-B62407C38D21}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day4", "Day4", "{A4BDEE44-3418-41CC-AE73-8F80A82A16F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDictionary", "Day4\MyDictionary\MyDictionary.csproj", "{CC91386E-4ABB-47B2-98A7-262090AE6CB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +48,10 @@ Global
 		{1F7C995E-7FF6-4AE8-9902-B62407C38D21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F7C995E-7FF6-4AE8-9902-B62407C38D21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F7C995E-7FF6-4AE8-9902-B62407C38D21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC91386E-4ABB-47B2-98A7-262090AE6CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC91386E-4ABB-47B2-98A7-262090AE6CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC91386E-4ABB-47B2-98A7-262090AE6CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC91386E-4ABB-47B2-98A7-262090AE6CB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
