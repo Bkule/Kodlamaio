@@ -1,0 +1,45 @@
+﻿(Türkçe)
+(Ödev 3 - C# dilinde "switch" yapısını araştırınız. Switch yapısını bilmeyen birine yazıyla anlatmanız gerekseydi, nasıl anlatırdınız?)
+
+Bir değişkeni üç veya daha fazla sabit koşula göre değerlendirmek istediğimizde if-else yerine kullanabileceğimiz bir yapıdır.
+Sözdizimi aşağıdaki gibidir.
+
+"
+switch("eşleşme veya değişken")
+{
+    case "değişkenin alacağı sabit değer":
+        durum 1;
+        break;
+    default: 
+        durum 2;
+        break;
+}
+"
+
+Switch parantez içine eşleşme veya değişkenimiz yazılır. Daha sonra her bir case için değişkenimizin alacağı değerler belirtilir.
+Derleyicimiz, değişkenimizin hangi değerde olduğuna bakar ve o değer ile eşleşen case altında yazılmış durum kodlarını okumaya başlar.
+Eğer herhangi bir değer ile eşleşen bir durum yoksa, bu durumda ise devam edilmesi istenen default satırı oluşturulur. 
+Break, return ya da goto anahtar sözcükleri ile ilgili durumdan çıkılır.
+
+
+(English)
+(Sample 3 - Search for the "switch" structure in C # language. If you had to write to someone who doesn't know how to switch, how would you describe it?)
+
+The switch statement can be used instead of if-else statement when you want to test a variable against three or more conditions.
+The general syntax is the following:
+
+"
+switch(match expression/variable)
+{
+    case constant-value:
+        statement(s) to be executed;
+        break;
+    default: 
+        statement(s) to be executed;
+        break;
+}
+"
+
+The statement is starting with switch keyword which contains a match expression or a variable in the bracket. The result will be tested against conditions which are specified
+as cases. Each case includes one or more statements to be executed. If the constant-value is equal to the value of match expression/variable, the case of constant-value will
+be executed. The default case will be executed if there are no cases executed. The break, return or goto keyword is used to exit the program control from switch case.

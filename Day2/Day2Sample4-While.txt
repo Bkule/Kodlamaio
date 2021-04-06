@@ -1,0 +1,32 @@
+﻿(Türkçe)
+(Ödev 4 - C# dilinde "while döngüsünü" araştırınız. While döngüsünü bilmeyen birine yazıyla anlatmanız gerekseydi, nasıl anlatırdınız?)
+
+While döngüsü, belirtilen koşulumuzun sağlandığı tüm durumlarda, kod bloklarını tekrar tekrar yürütülmesini sağlayan bir döngüdür.
+Sözdizimi şu şekildedir:
+
+"
+While("koşul")
+{
+    //kod bloku
+}
+"
+
+While parantezi içine, koşulun sağlandığı sürece kod blokunun dönmesini istediğimiz koşul yazılır. Koşulumuz sağlanmadığı zaman döngü durur.
+
+
+(English)
+(Sample 4 - Search for "while loop" in C # language. If you had to write to someone who doesn't know the while loop, how would you describe it?)
+
+While loop repeatedly execute a block of code as long as the specified condition returns false.
+
+The following is syntax of while loop:
+
+"
+While(condition)
+{
+    //code block
+}
+"
+
+The loop starts with while keyword which must include a boolean conditional expression inside brackets. It executes the code block until the specified conditional expression
+returns false.

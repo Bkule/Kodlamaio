@@ -8,7 +8,32 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day1", "Day1", "{310C7C2F-9
 		Day1\PythonIntro.py = Day1\PythonIntro.py
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day2", "Day2", "{10B0F64C-E61B-4085-99C3-E5C466FD6772}"
+	ProjectSection(SolutionItems) = preProject
+		Day2\Day2Sample2-TernaryOp.txt = Day2\Day2Sample2-TernaryOp.txt
+		Day2\Day2Sample3-Switch.txt = Day2\Day2Sample3-Switch.txt
+		Day2\Day2Sample4-While.txt = Day2\Day2Sample4-While.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day2Sample5", "Day2\Day2Sample5\Day2Sample5.csproj", "{CDF6011F-7852-476E-B8C7-4AAF5667AFE5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day2Sample6", "Day2\Day2Sample6\Day2Sample6.csproj", "{12C11A9E-8B16-4736-A8A7-32EE25AAF2FF}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDF6011F-7852-476E-B8C7-4AAF5667AFE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF6011F-7852-476E-B8C7-4AAF5667AFE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDF6011F-7852-476E-B8C7-4AAF5667AFE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF6011F-7852-476E-B8C7-4AAF5667AFE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12C11A9E-8B16-4736-A8A7-32EE25AAF2FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12C11A9E-8B16-4736-A8A7-32EE25AAF2FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12C11A9E-8B16-4736-A8A7-32EE25AAF2FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12C11A9E-8B16-4736-A8A7-32EE25AAF2FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

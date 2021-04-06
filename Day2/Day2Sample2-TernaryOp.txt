@@ -1,0 +1,63 @@
+﻿    (Türkçe)
+(Ödev 2 - C# dilinde "ternary operatörü" araştırınız. Ternary Operatörü bilmeyen birine yazıyla anlatmanız gerekseydi, nasıl anlatırdınız?)
+
+Anladığım kadarıyla, genellikle elimizde iki değişken ve koşul olduğu zaman, If-else yapısı yerine kullanabileceğimiz bir operatördür.
+Açıklamak gerekirse:
+Sözdizimi : ( koşul ? durum 1 : durum 2 ) şeklinde yazılır. Eğer yazdığımız koşul doğru ise derleyicimiz(compiler) durum 1'i kabul edip, kodu okumaya devam eder, 
+yoksa; derleyici durum 2 için devam eder. Örnek verecek olursam. Bir sıralama kodu yazalım.
+
+"
+a = 3; b = 4 için ternary operatörünü kullanacak olursak. Burada iki değişken ve koşulumuz (sıralama) var.
+var result = a > b ? "a, b'den büyüktür." :
+                        a < b ? "a, b'den küçüktür." :
+                              a == b ? "a, b'ye eşittir." ;
+Console.WriteLine(result);
+"
+
+Ekran üzerinde result değişkenimizin sonucu "a, b'den küçüktür" olacaktır.
+Yukarıdaki değişkenlerimize bir de "c = 5;" ekleyelim. O zaman değişken sayımız üç ve fazla koşulumuz oluyor.
+
+"
+var result = (a > b && a > c) ? ((b>c) ? "a büyük b büyük c'dir." : "a büyük c büyük b'dir.") :
+                   //durum iki için kendi içinde bir ternary operatörü oluşturduk.
+                   (b > a && b > c) ? ((a>c) ? "b büyük a büyük c'dir." : "b büyük c büyük a'dır.") :
+                         (c > a && c > b) ? ((a>b) ? "c büyük a büyük b'dir." : "c büyük b büyük a'dır.") :
+                                "Sayılardan eşit olanlar vardır" ;
+Console.WriteLine(result);
+"
+
+Görüldüğü üzere, c sayısını eklediğimizde başta iki değişken ve üç koşulumuzu yazmak ve okumak işi karmaşık bir hal alıyor. 
+İlk cümlemde söylediğim gibi değişken ve koşul sayımız arttıkça ternary operatörü yerine if-else operatörünü kullanmamız okumak ve yazmak için daha yararlı olacaktır.
+
+
+    (English)
+(Sample 2 - Search for "ternary operator" in C # language. If you had to write to someone who does not know the Ternary Operator, how would you describe it?)
+
+This is called also the conditional operator. It is the short form of the if-else conditions.
+The general syntax is ( condition ? statement 1 : statement 2 ).
+If the condition become true, the compiler execute the statement 1; otherwise the statement 2 will be executed by compiler.
+For example:
+
+"
+int a = 3; b = 4;
+string result = a > b ? "a is greater than b." :
+                    a < b ? "a is less than b." :   //we write that statement 1 is like a new ternary operator.
+                        a == b ? "a is equal to b." ;
+Console.WriteLine(result);
+"
+
+According to syntax, our result will be "a is less than b.".
+
+However, Nested Ternary Operator is not readable and cannot be debugged easily. If-else is more readable and easier to debug in case of issue.
+
+We can add variable c = 5 into last example. We have three numbers now.
+For example: 
+
+"
+int a = 3; b = 4; c = 5;
+string result = (a > b && a > c) ? ((b>c) ? "a>b>c" : "a>c>b") :
+                    (b > a && b > c) ? ((a>c) ? "b>a>c" : "b>c>a") :
+                        (c > a && c > b) ? ((a>b) ? "c>a>b" : "c>b>a") :
+                             "Two or more numbers are equal to each other." ;
+Console.WriteLine(result);
+"
