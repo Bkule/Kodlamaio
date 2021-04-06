@@ -1,0 +1,50 @@
+﻿(Türkçe)
+(Abstract sınıfları araştırınız. Abstract sınıfları bilmeyen birine nasıl anlatırdınız?)
+
+Soyut sınıfların uygulanması için, sınıf ve sınıf üyelerinin tamamlanmamış ve türetilmiş bir sınıf içerisinde uygulanmış olmaları gereklidir. Sınıf tanımlamasından 
+önce 'abstract' anahtarı konularak yapılır. 
+
+"
+public abstract class A
+{
+	//class members
+}
+"
+
+Soyut sınıfların amacı, birden çok türetilmiş sınıfların paylaşabileceği ortak bir temel sınıfın tanımını yapmaktır. Soyut sınıflar, ayrıca soyut metotlar
+içerebilirler. Bu da metot öncesinde abstract anahtarını kullanarak yapılır. Soyut metotların uygulaması yoktur.
+
+"
+public abstract class A
+{
+	public abstract void DoWork(int i);    // uygulama yok
+}
+"
+
+
+
+
+
+(English)
+(Check out the abstract classes. How would you describe it to someone who doesn't know the abstract classes?)
+
+The abstract keyword enables you to create classes and class members that are incomplete and must be implemented in a derived class. Classes can be declared as
+abstract by putting the keyword abstract before the class definition.
+
+"
+public abstract class A
+{
+	//class members
+}
+"
+
+The purpose of an abstract class is to provide a common definition of a base class that multiple derived classes can share.
+Abstract classes may also define abstract methods. This is accomplished by adding the keyword abstract before the return type of the method. Abstract methods have 
+no implementation.
+
+"
+public abstract class A
+{
+	public abstract void DoWork(int i);    //no implementation
+}
+"
