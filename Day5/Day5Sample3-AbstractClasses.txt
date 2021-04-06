@@ -22,9 +22,6 @@ public abstract class A
 "
 
 
-
-
-
 (English)
 (Check out the abstract classes. How would you describe it to someone who doesn't know the abstract classes?)
 
