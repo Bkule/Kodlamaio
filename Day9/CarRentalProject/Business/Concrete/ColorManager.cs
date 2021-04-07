@@ -31,7 +31,7 @@ namespace Business.Concrete
             return _colorDal.GetAll(c => c.ColorId == colorId);
         }
 
-        public void Insert(Color color)
+        public void Add(Color color)
         {
             _colorDal.Add(color);
         }

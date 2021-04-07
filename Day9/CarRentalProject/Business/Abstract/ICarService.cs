@@ -13,7 +13,7 @@ namespace Business.Abstract
         List<Car> GetAllByBrandId(int brandId);
         List<Car> GetAllByColorId(int colorId);
         List<CarDetailDto> GetCarDetails();
-        void Insert(Car car);
+        void Add(Car car);
         void Delete(Car car);
         void Update(Car car);
     }

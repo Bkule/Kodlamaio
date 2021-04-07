@@ -43,22 +43,82 @@ namespace ConsoleUI
             //CrudCarTest(carManager);
             //GetCarByBrandIdTest(carManager);
             //GetCarByColorIdTest(carManager);
+            //GetAllBrandTest(brandManager);
+            //CrudBrandTest(brandManager);
+            //GetBrandByIdTest(brandManager);
+            //GetAllColorTest(colorManager);
+            //CrudColorTest(colorManager);
+            //GetColorByIdTest(colorManager);
 
+        }
+
+        private static void GetColorByIdTest(ColorManager colorManager)
+        {
+            foreach (var color in colorManager.GetColorById(1))
+            {
+                Console.WriteLine(color.ColorId + "/" + color.ColorName);
+            }
+        }
+
+        private static void CrudColorTest(ColorManager colorManager)
+        {
+            Color color = new Color() { ColorName = "Purpl" };
+            colorManager.Add(color);
+            Console.WriteLine(color.ColorId + "/" + color.ColorName);
+            color.ColorName = "Purple";
+            colorManager.Update(color);
+            Console.WriteLine(color.ColorName);
+            colorManager.Delete(color);
+        }
+
+        private static void GetAllColorTest(ColorManager colorManager)
+        {
+            foreach (var color in colorManager.GetAll())
+            {
+                Console.WriteLine(color.ColorId + "/" + color.ColorName);
+            }
+        }
+
+        private static void GetBrandByIdTest(BrandManager brandManager)
+        {
+            foreach (var brand in brandManager.GetBrandById(1))
+            {
+                Console.WriteLine(brand.BrandId + "/" + brand.BrandName);
+            }
+        }
+
+        private static void CrudBrandTest(BrandManager brandManager)
+        {
+            Brand brand = new Brand() { BrandName = "McLare" };
+            brandManager.Add(brand);
+            Console.WriteLine(brand.BrandId + "/" + brand.BrandName);
+            brand.BrandName = "McLaren";
+            brandManager.Update(brand);
+            Console.WriteLine(brand.BrandName);
+            brandManager.Delete(brand);
+        }
+
+        private static void GetAllBrandTest(BrandManager brandManager)
+        {
+            foreach (var brand in brandManager.GetAll())
+            {
+                Console.WriteLine(brand.BrandId + "/" + brand.BrandName);
+            }
         }
 
         private static void GetCarByColorIdTest(CarManager carManager)
         {
             foreach (var car in carManager.GetAllByColorId(1))
             {
-                Console.WriteLine(car.BrandId + "/" + car.ColorId);
+                Console.WriteLine(car.CarName + "/" + car.BrandId + "/" + car.ColorId);
             }
         }
 
-        private static void ByBrandIdTest(CarManager carManager)
+        private static void GetCarByBrandIdTest(CarManager carManager)
         {
             foreach (var car in carManager.GetAllByBrandId(1))
             {
-                Console.WriteLine(car.BrandId + "/" + car.ColorId);
+                Console.WriteLine(car.CarName + "/" + car.BrandId + "/" + car.ColorId);
             }
         }
 
@@ -66,19 +126,27 @@ namespace ConsoleUI
         {
             foreach (var car in carManager.GetCarDetails())
             {
-                Console.WriteLine(car.BrandName + "/" + car.ColorName);
+                Console.WriteLine(car.CarName + "/" + car.BrandName + "/" + car.ColorName);
             }
         }
 
         private static void CrudCarTest(CarManager carManager)
         {
-            Car car1 = new Car() { BrandId = 5, ColorId = 6, DailyPrice = 20, ModelYear = "2018" };
-            carManager.Insert(car1);
-            Console.WriteLine(car1.DailyPrice);
-            car1.DailyPrice = 25;
-            carManager.Update(car1);
-            Console.WriteLine(car1.DailyPrice);
-            carManager.Delete(car1);
+            Car car = new Car()
+            {
+                CarName = "A3 Sedan",
+                BrandId = 1,
+                ColorId = 2,
+                ModelYear = "2015",
+                DailyPrice = 640,
+                Description = "5 Adults, 4 Bags"
+            };
+            carManager.Add(car);
+            Console.WriteLine(car.CarId + "/" + car.CarName + "/" + car.DailyPrice);
+            car.DailyPrice = 950;
+            carManager.Update(car);
+            Console.WriteLine(car.CarId + "/" + car.CarName + "/" + car.DailyPrice);
+            carManager.Delete(car);
         }
     }
 }

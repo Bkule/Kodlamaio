@@ -31,7 +31,7 @@ namespace Business.Concrete
             return _brandDal.GetAll(b => b.BrandId == brandId);
         }
 
-        public void Insert(Brand brand)
+        public void Add(Brand brand)
         {
             _brandDal.Add(brand);
         }
