@@ -9,11 +9,11 @@ using System.Linq;
 
 namespace DataAccess.Concrete
 {
-    public class EfCarDal : EfEntityRepositoryBase<Car, ReCapProjectContext>, ICarDal
+    public class EfCarDal : EfEntityRepositoryBase<Car, CarRentalContext>, ICarDal
     {
         public List<CarDetailDto> GetCarDetails()
         {
-            using (ReCapProjectContext context = new ReCapProjectContext())
+            using (CarRentalContext context = new CarRentalContext())
             {
                 var result = from c in context.Cars
                              join b in context.Brands on c.BrandId equals b.BrandId
