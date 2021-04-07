@@ -54,10 +54,8 @@ namespace ConsoleUI
 
         private static void GetColorByIdTest(ColorManager colorManager)
         {
-            foreach (var color in colorManager.GetColorById(1))
-            {
-                Console.WriteLine(color.ColorId + "/" + color.ColorName);
-            }
+            var result = colorManager.GetColorById(1);
+            Console.WriteLine(result.ColorId + "/" + result.ColorName);
         }
 
         private static void CrudColorTest(ColorManager colorManager)
@@ -81,10 +79,8 @@ namespace ConsoleUI
 
         private static void GetBrandByIdTest(BrandManager brandManager)
         {
-            foreach (var brand in brandManager.GetBrandById(1))
-            {
-                Console.WriteLine(brand.BrandId + "/" + brand.BrandName);
-            }
+            var result = brandManager.GetBrandById(1);
+                Console.WriteLine(result.BrandId + "/" + result.BrandName);
         }
 
         private static void CrudBrandTest(BrandManager brandManager)

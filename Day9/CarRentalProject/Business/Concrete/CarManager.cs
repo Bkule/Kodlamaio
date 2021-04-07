@@ -52,9 +52,9 @@ namespace Business.Concrete
             _carDal.Update(car);
         }
 
-        public List<Car> GetAllByCarId(int carId)
+        public Car GetById(int carId)
         {
-            return _carDal.GetAll(c => c.CarId == carId);
+            return _carDal.Get(c => c.CarId == carId);
         }
     }
 }
