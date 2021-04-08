@@ -55,7 +55,7 @@ namespace ConsoleUI
             //BrandManager brandManager = new BrandManager(new EfBrandDal());
             //ColorManager colorManager = new ColorManager(new EfColorDal());
             //UserManager userManager = new UserManager(new EfUserDal());
-            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            //RentalManager rentalManager = new RentalManager(new EfRentalDal());
 
             //CarDetailsTest(carManager);
             //CrudCarTest(carManager);
@@ -71,7 +71,6 @@ namespace ConsoleUI
             //CrudUserAddTest(userManager);
             //GetAllUserTest(userManager);
             //GetAllRentalTest(rentalManager);
-
         }
 
         private static void GetAllRentalTest(RentalManager rentalManager)

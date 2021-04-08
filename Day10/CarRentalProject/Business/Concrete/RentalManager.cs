@@ -24,12 +24,12 @@ namespace Business.Concrete
             var result = _rentalDal.GetAll(c => c.CarId == rental.CarId && c.ReturnDate == null);
             if(result.Any())
             {
-                return new ErrorResult(Messages.RentalCarInvalid);
+                _rentalDal.Add(rental);
+                return new SuccessResult(Messages.RentalAdded);
             }
             else
             {
-                _rentalDal.Add(rental);
-                return new SuccessResult(Messages.RentalAdded);
+                return new ErrorResult(Messages.RentalCarInvalid);
             }
         }
 
