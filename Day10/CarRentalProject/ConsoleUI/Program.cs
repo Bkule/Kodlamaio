@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Business.Concrete;
 using DataAccess.Concrete;
 using Entities.Concrete;
@@ -11,25 +12,50 @@ namespace ConsoleUI
         {
             /*
             (Türkçe)
-            Car Rental Projenizde; 
+            CarRental projenizde;
             
             1. Core katmanında Results yapılandırması yapınız.
             
             2. Daha önce geliştirdiğiniz tüm Business sınıflarını bu yapıya göre refactor (kodu iyileştirme) ediniz.
             
+            3. Kullanıcılar tablosu oluşturunuz. Users-->Id,FirstName,LastName,Email,Password
             
+            4. Müşteriler tablosu oluşturunuz. Customers-->UserId,CompanyName ****Kullanıcılar ve müşteriler ilişkilidir.
+            
+            5. Arabanın kiralanma bilgisini tutan tablo oluşturunuz. Rentals-->Id, CarId, CustomerId, RentDate(Kiralama Tarihi),
+            ReturnDate(Teslim Tarihi). Araba teslim edilmemişse ReturnDate null'dır.
+
+            6. Projenizde bu entity'leri oluşturunuz. CRUD operasyonlarını yazınız. Yeni müşteriler ekleyiniz.
+
+            7. Arabayı kiralama imkanını kodlayınız. Rental-->Add
+            Arabanın kiralanabilmesi için arabanın teslim edilmesi gerekmektedir.
+
+
             (English)
             In Car Rental project;
-            
+
             1. Configure Results classes in Core layer.
 
             2. Write all the Business classes that you have developed in your project, by refactoring with Results classes.
+            
+            3. Create Users table. Users -> Id, FirstName, LastName, Email, Password
+
+            4.Create Customers table. Customers -> UserId, CompanyName **** Customers and Users are associated.
+
+            5. Create Rental table that keeps the rental informations of the car. Rental -> Id, CarId, CustomerId, RentDate,
+            ReturnDate. ReturnDate is null, if the car has not been delivered.
+
+            6. Create these entities in your project. (User, Customer, Rental) Code CRUD operations. Add new customers.
+
+            7.Code car rentals. Rental -> Add. The car must be delivered, in order to rent the car.
             */
 
 
-            CarManager carManager = new CarManager(new EfCarDal());
-            BrandManager brandManager = new BrandManager(new EfBrandDal());
-            ColorManager colorManager = new ColorManager(new EfColorDal());
+            //CarManager carManager = new CarManager(new EfCarDal());
+            //BrandManager brandManager = new BrandManager(new EfBrandDal());
+            //ColorManager colorManager = new ColorManager(new EfColorDal());
+            //UserManager userManager = new UserManager(new EfUserDal());
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
 
             //CarDetailsTest(carManager);
             //CrudCarTest(carManager);
@@ -41,7 +67,52 @@ namespace ConsoleUI
             //GetAllColorTest(colorManager);
             //CrudColorTest(colorManager);
             //GetColorByIdTest(colorManager);
+            //DeleteUsersTest(userManager);
+            //CrudUserAddTest(userManager);
+            //GetAllUserTest(userManager);
+            //GetAllRentalTest(rentalManager);
 
+        }
+
+        private static void GetAllRentalTest(RentalManager rentalManager)
+        {
+            foreach (var rental in rentalManager.GetAll().Data)
+            {
+                Console.WriteLine(rental.RentalId + " " + rental.RentDate);
+            }
+        }
+
+        private static void DeleteUsersTest(UserManager userManager)
+        {
+            foreach (var user in userManager.GetAll().Data)
+            {
+                userManager.Delete(user);
+            }
+        }
+
+        private static void CrudUserAddTest(UserManager userManager)
+        {
+            List<User> users = new List<User>()
+            {
+                new User() {FirstName = "Berkin", LastName = "Kule", Email="qwe@qwe", Password = "qwerty" },
+                new User() {FirstName = "Engin", LastName = "Demiroğ", Email="asd@asd", Password = "asdfg"},
+                new User() {FirstName = "Mehmet", LastName="Öztürk", Email = "zxc@zxc", Password="zxcvb"},
+                new User() {FirstName = "Bulut", LastName ="Yılmaz", Email = "rty@rty", Password="hjklşi"},
+                new User() {FirstName = "Ali", LastName="Baş", Email="fgh@fgh", Password = "nmöç"}
+            };
+            foreach (var user in users)
+            {
+                userManager.Add(user);
+                Console.WriteLine(user.FirstName + " " + user.LastName);
+            }
+        }
+
+        private static void GetAllUserTest(UserManager userManager)
+        {
+            foreach (var user in userManager.GetAll().Data)
+            {
+                Console.WriteLine(user.FirstName + " " + user.LastName);
+            }
         }
 
         private static void GetColorByIdTest(ColorManager colorManager)
