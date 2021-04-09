@@ -54,8 +54,9 @@ namespace ConsoleUI
             //CarManager carManager = new CarManager(new EfCarDal());
             //BrandManager brandManager = new BrandManager(new EfBrandDal());
             //ColorManager colorManager = new ColorManager(new EfColorDal());
-            //UserManager userManager = new UserManager(new EfUserDal());
-            //RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            UserManager userManager = new UserManager(new EfUserDal());
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
 
             //CarDetailsTest(carManager);
             //CrudCarTest(carManager);
@@ -68,9 +69,62 @@ namespace ConsoleUI
             //CrudColorTest(colorManager);
             //GetColorByIdTest(colorManager);
             //DeleteUsersTest(userManager);
-            //CrudUserAddTest(userManager);
+            //UserAddTest(userManager);
             //GetAllUserTest(userManager);
+            //CustomerAddTest(customerManager);
+            //DeleteCustomersTest(customerManager);
+            //CustomerDetailTest(customerManager);
             //GetAllRentalTest(rentalManager);
+            //AddRentalTest(rentalManager);
+            //RentalDetailTest(rentalManager);
+
+        }
+
+        private static void RentalDetailTest(RentalManager rentalManager)
+        {
+            foreach (var rental in rentalManager.GetRentalDetails().Data)
+            {
+                Console.WriteLine(rental);
+            }
+        }
+
+        private static void DeleteCustomersTest(CustomerManager customerManager)
+        {
+            foreach (var customer in customerManager.GetAll().Data)
+            {
+                customerManager.Delete(customer);
+            }
+        }
+
+        private static void AddRentalTest(RentalManager rentalManager)
+        {
+            Rental rental = new Rental() { CarId = 1, CustomerId = 1, RentDate = DateTime.Now };
+            rentalManager.Add(rental);
+        }
+
+        private static void CustomerDetailTest(CustomerManager customerManager)
+        {
+            foreach (var customer in customerManager.GetCustomerDetails().Data)
+            {
+                Console.WriteLine(customer);
+            }
+        }
+
+        private static void CustomerAddTest(CustomerManager customerManager)
+        {
+            List<Customer> customers = new List<Customer>()
+            {
+                new Customer() { CompanyName = "Kule AŞ"},
+                new Customer() {CompanyName = "Demiroğ AŞ"},
+                new Customer() {CompanyName = "Öztürk AŞ"},
+                new Customer() {CompanyName = "Yılmaz AŞ"},
+                new Customer() {CompanyName ="Baş AŞ"}
+            };
+            foreach (var customer in customers)
+            {
+                customerManager.Add(customer);
+                Console.WriteLine(customer.UserId + " / " + customer.CompanyName);
+            }
         }
 
         private static void GetAllRentalTest(RentalManager rentalManager)
@@ -89,15 +143,15 @@ namespace ConsoleUI
             }
         }
 
-        private static void CrudUserAddTest(UserManager userManager)
+        private static void UserAddTest(UserManager userManager)
         {
             List<User> users = new List<User>()
             {
-                new User() {FirstName = "Berkin", LastName = "Kule", Email="qwe@qwe", Password = "qwerty" },
+                new User() {FirstName = "Berkin", LastName = "Kule", Email="qwe@qwe", Password = "qwert" },
                 new User() {FirstName = "Engin", LastName = "Demiroğ", Email="asd@asd", Password = "asdfg"},
                 new User() {FirstName = "Mehmet", LastName="Öztürk", Email = "zxc@zxc", Password="zxcvb"},
-                new User() {FirstName = "Bulut", LastName ="Yılmaz", Email = "rty@rty", Password="hjklşi"},
-                new User() {FirstName = "Ali", LastName="Baş", Email="fgh@fgh", Password = "nmöç"}
+                new User() {FirstName = "Bulut", LastName ="Yılmaz", Email = "rty@rty", Password="rtyuı"},
+                new User() {FirstName = "Ali", LastName="Baş", Email="fgh@fgh", Password = "fghjk"}
             };
             foreach (var user in users)
             {
