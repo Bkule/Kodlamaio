@@ -16,11 +16,11 @@ namespace DataAccess.Concrete
             using (CarRentalContext context = new CarRentalContext())
             {
                 var result = from u in context.Users
-                             join c in context.Customers on u.Id equals c.UserId
-                             join r in context.Rentals on c.UserId equals r.CustomerId
+                             join c in context.Customers on u.UserId equals c.CustomerId
+                             join r in context.Rentals on c.CustomerId equals r.CustomerId
                              select new CustomerDetailDto
                              {
-                                 CustomerId = c.UserId,
+                                 CustomerId = c.CustomerId,
                                  FirstName = u.FirstName,
                                  LastName = u.LastName,
                                  CompanyName = c.CompanyName,

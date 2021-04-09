@@ -123,7 +123,7 @@ namespace ConsoleUI
             foreach (var customer in customers)
             {
                 customerManager.Add(customer);
-                Console.WriteLine(customer.UserId + " / " + customer.CompanyName);
+                Console.WriteLine(customer.CustomerId + " / " + customer.CompanyName);
             }
         }
 

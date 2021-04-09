@@ -18,8 +18,8 @@ namespace DataAccess.Concrete
             {
                 var result = from r in context.Rentals
                              join c in context.Cars on r.CarId equals c.CarId
-                             join u in context.Users on r.CustomerId equals u.Id
-                             join cu in context.Customers on r.CustomerId equals cu.UserId
+                             join u in context.Users on r.CustomerId equals u.UserId
+                             join cu in context.Customers on r.CustomerId equals cu.CustomerId
                              select new RentalDetailDto()
                              {
                                  RentalId = r.RentalId,
