@@ -12,21 +12,6 @@ namespace DataAccess.Concrete
 {
     public class EfRentalDal : EfEntityRepositoryBase<Rental, CarRentalContext>, IRentalDal
     {
-        public List<Rental> CheckCarReturn()
-        {
-            using (CarRentalContext context = new CarRentalContext())
-            {
-                var result = from r in context.Rentals
-                             join c in context.Cars on r.CarId equals c.CarId
-                             where r.ReturnDate == null
-                             select new Rental()
-                             {
-                                 CarId = r.CarId
-                             };
-                return result.ToList();
-            }
-        }
-
         public List<RentalDetailDto> GetRentalDetails()
         {
             using (CarRentalContext context = new CarRentalContext())
