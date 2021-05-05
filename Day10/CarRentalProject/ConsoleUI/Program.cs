@@ -114,16 +114,16 @@ namespace ConsoleUI
         {
             List<Customer> customers = new List<Customer>()
             {
-                new Customer() { CompanyName = "Kule AŞ"},
-                new Customer() {CompanyName = "Demiroğ AŞ"},
-                new Customer() {CompanyName = "Öztürk AŞ"},
-                new Customer() {CompanyName = "Yılmaz AŞ"},
-                new Customer() {CompanyName ="Baş AŞ"}
+                new Customer() {UserId = 1, CompanyName = "Kule AŞ"},
+                new Customer() {UserId = 2, CompanyName = "Demiroğ AŞ"},
+                new Customer() {UserId = 3, CompanyName = "Öztürk AŞ"},
+                new Customer() {UserId = 4, CompanyName = "Yılmaz AŞ"},
+                new Customer() {UserId = 5, CompanyName ="Baş AŞ"}
             };
             foreach (var customer in customers)
             {
                 customerManager.Add(customer);
-                Console.WriteLine(customer.CustomerId + " / " + customer.CompanyName);
+                Console.WriteLine(customer.UserId + " / " + customer.CompanyName);
             }
         }
 
@@ -131,7 +131,7 @@ namespace ConsoleUI
         {
             foreach (var rental in rentalManager.GetAll().Data)
             {
-                Console.WriteLine(rental.RentalId + " " + rental.RentDate);
+                Console.WriteLine(rental.Id + " " + rental.RentDate);
             }
         }
 

@@ -23,14 +23,14 @@ namespace Business.Concrete
         public IResult Add(Rental rental)
         {
             var result = _rentalDal.GetAll(c => c.CarId == rental.CarId && c.ReturnDate == null);
-            if(result.Any())
+            if (result.Any())
             {
-                _rentalDal.Add(rental);
-                return new SuccessResult(Messages.RentalAdded);
+                return new ErrorResult(Messages.RentalCarInvalid);
             }
             else
             {
-                return new ErrorResult(Messages.RentalCarInvalid);
+                _rentalDal.Add(rental);
+                return new SuccessResult(Messages.RentalAdded);
             }
         }
 
@@ -42,7 +42,7 @@ namespace Business.Concrete
 
         public IDataResult<Rental> GetByRentalId(int id)
         {
-            return new SuccessDataResult<Rental>(_rentalDal.Get(r=>r.RentalId == id));
+            return new SuccessDataResult<Rental>(_rentalDal.Get(r=>r.Id == id));
         }
 
         public IDataResult<List<Rental>> GetRentalsByCarId(int id)
