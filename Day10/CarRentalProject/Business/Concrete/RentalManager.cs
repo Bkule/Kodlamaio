@@ -40,17 +40,17 @@ namespace Business.Concrete
             return new SuccessResult(Messages.RentalDeleted);
         }
 
-        public IDataResult<Rental> GetByRentalId(int id)
+        public IDataResult<Rental> GetById(int id)
         {
             return new SuccessDataResult<Rental>(_rentalDal.Get(r=>r.Id == id));
         }
 
-        public IDataResult<List<Rental>> GetRentalsByCarId(int id)
+        public IDataResult<List<Rental>> GetByCarId(int id)
         {
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(r => r.CarId == id));
         }
 
-        public IDataResult<List<Rental>> GetRentalsByUserId(int id)
+        public IDataResult<List<Rental>> GetByUserId(int id)
         {
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(r => r.CustomerId == id));
         }
@@ -58,12 +58,6 @@ namespace Business.Concrete
         public IDataResult<List<Rental>> GetAll()
         {
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(),Messages.RentalsListed);
-        }
-
-        public IDataResult<List<Rental>> GetAllByDate(DateTime datetime)
-        {
-            return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll(r => r.RentDate == datetime || r.ReturnDate == datetime),
-                Messages.RentalsListed);
         }
 
         public IResult Update(Rental rental)

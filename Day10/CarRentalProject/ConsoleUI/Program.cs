@@ -54,9 +54,9 @@ namespace ConsoleUI
             //CarManager carManager = new CarManager(new EfCarDal());
             //BrandManager brandManager = new BrandManager(new EfBrandDal());
             //ColorManager colorManager = new ColorManager(new EfColorDal());
-            UserManager userManager = new UserManager(new EfUserDal());
-            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
-            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            //UserManager userManager = new UserManager(new EfUserDal());
+            //CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            //RentalManager rentalManager = new RentalManager(new EfRentalDal());
 
             //CarDetailsTest(carManager);
             //CrudCarTest(carManager);
@@ -77,7 +77,16 @@ namespace ConsoleUI
             //GetAllRentalTest(rentalManager);
             //AddRentalTest(rentalManager);
             //RentalDetailTest(rentalManager);
+            //DeleteRentalsTest(rentalManager);
 
+        }
+
+        private static void DeleteRentalsTest(RentalManager rentalManager)
+        {
+            foreach (var rental in rentalManager.GetAll().Data)
+            {
+                rentalManager.Delete(rental);
+            }
         }
 
         private static void RentalDetailTest(RentalManager rentalManager)
@@ -98,8 +107,13 @@ namespace ConsoleUI
 
         private static void AddRentalTest(RentalManager rentalManager)
         {
-            Rental rental = new Rental() { CarId = 1, CustomerId = 1, RentDate = DateTime.Now };
-            rentalManager.Add(rental);
+            Rental rental1 = new Rental() { CarId = 1, CustomerId = 1, RentDate = DateTime.Now, ReturnDate = DateTime.Now};
+            Rental rental2 = new Rental() { CarId = 3, CustomerId = 2, RentDate = DateTime.Now};
+            Rental rental3 = new Rental() { CarId = 1, CustomerId = 3, RentDate = DateTime.Now};
+
+            rentalManager.Add(rental1);
+            rentalManager.Add(rental2);
+            rentalManager.Add(rental3);
         }
 
         private static void CustomerDetailTest(CustomerManager customerManager)
@@ -170,7 +184,7 @@ namespace ConsoleUI
 
         private static void GetColorByIdTest(ColorManager colorManager)
         {
-            var color = colorManager.GetColorById(1);
+            var color = colorManager.GetById(1);
             if(color.Success)
             {
                 Console.WriteLine(color.Data.ColorId + "/" + color.Data.ColorName);
@@ -202,7 +216,7 @@ namespace ConsoleUI
 
         private static void GetBrandByIdTest(BrandManager brandManager)
         {
-            var brand = brandManager.GetBrandById(1);
+            var brand = brandManager.GetById(1);
             if(brand.Success)
             {
                 Console.WriteLine(brand.Data.BrandId + "/" + brand.Data.BrandName);

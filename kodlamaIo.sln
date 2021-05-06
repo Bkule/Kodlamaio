@@ -86,6 +86,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CarRentalProject", "CarRentalProject", "{C10EC45F-DA5C-4AEA-B4E6-69607DF8790A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day10", "Day10", "{6D166B7F-8647-41B0-AF47-3BFC2DD189EF}"
+	ProjectSection(SolutionItems) = preProject
+		Day10\dbo.Customers.sql = Day10\dbo.Customers.sql
+		Day10\dbo.Rentals.sql = Day10\dbo.Rentals.sql
+		Day10\dbo.Users.sql = Day10\dbo.Users.sql
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CarRentalProject", "CarRentalProject", "{13D3AA19-AA16-4F18-B9A0-CD5D2EED0F5C}"
 EndProject

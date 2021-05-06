@@ -35,12 +35,12 @@ namespace Business.Concrete
             return new SuccessDataResult<List<User>>(_userDal.GetAll(),Messages.UsersListed);
         }
 
-        public IDataResult<User> GetByUserId(int id)
+        public IDataResult<User> GetById(int id)
         {
             return new SuccessDataResult<User>(_userDal.Get(u => u.Id == id));
         }
 
-        public IDataResult<List<User>> GetUsersByname(string name)
+        public IDataResult<List<User>> GetByName(string name)
         {
             return new SuccessDataResult<List<User>>(_userDal.GetAll(u => u.FirstName == name || u.LastName == name),Messages.UsersListed);
         }

@@ -29,9 +29,9 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Color>>(_colorDal.GetAll(),Messages.ColorsListed);
         }
 
-        public IDataResult<Color> GetColorById(int colorId)
+        public IDataResult<Color> GetById(int id)
         {
-            return new SuccessDataResult<Color>(_colorDal.Get(c => c.ColorId == colorId));
+            return new SuccessDataResult<Color>(_colorDal.Get(c => c.ColorId == id));
         }
 
         public IResult Add(Color color)
