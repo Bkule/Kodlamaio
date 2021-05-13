@@ -105,6 +105,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Day10\CarRentalProject\Entities\Entities.csproj", "{2F737FC7-2479-4C87-B6AF-9C8DF9B93851}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day11", "Day11", "{A300A259-91D5-4FAE-A967-61AA254DA9EF}"
+	ProjectSection(SolutionItems) = preProject
+		Day11\Day11Sample2-HTTPStatusCodes.txt = Day11\Day11Sample2-HTTPStatusCodes.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CarRentalProject", "CarRentalProject", "{4958D6F1-A8B5-4B30-819C-DF3EDBD6BFF1}"
 EndProject

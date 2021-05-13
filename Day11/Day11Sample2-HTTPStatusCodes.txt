@@ -1,0 +1,85 @@
+(Türkçe)
+(Ödev 2 - HTTP Statü kodlarını araştırınız. Özetinizi yoruma yazınız. 200, 201, 301, 400, 401, 403, 404, 500, 502)
+
+HTTP yanıt durum kodları, belirli bir HTTP isteğinin başarıyla tamamlanıp tamamlanmadığını gösterir. Yanıtlar beş sınıfta gruplandırılmıştır:
+1. Bilgilendirici yanıtlar (100-199)
+2. Başarılı yanıtlar (200-299)
+3. Yönlendirmeler (300-399)
+4. İstemci hataları (400-499)
+5. Sunucu hataları (500-599)
+
+a. 200 - Tamam
+İstek başarılıdır. Başarının anlamı HTTP yöntemine bağlıdır:
+GET: Kaynak alındı ve mesaj gövdesine aktarıldı.
+HEAD: Varlık başlıkları mesaj gövdesindedir.
+PUT veya POST: Eylemin sonucunu açıklayan kaynak mesaj gövdesine iletilir.
+TRACE: Mesaj gövdesi, sunucu tarafından alınan istek mesajını içerir.
+
+b. 201 - Oluşturuldu
+İstek başarılı oldu ve sonuç olarak yeni bir kaynak oluşturuldu. Genellikle POST veya bazı PUT isteklerinden sonra gönderilen yanıttır.
+
+c. 301 - Kalıcı Olarak Taşındı
+İstenen kaynağın URL'si kalıcı olarak değiştirildi. Yeni URL yanıtta verilmiştir.
+
+d. 400 - Kötü İstek
+Geçersiz sözdizimi nedeniyle sunucu, isteği anlayamadı.
+
+e. 401 - Yetkisiz
+"Kimlik doğrulaması yapılmamış" anlamına gelir. Müşteri, istenen yanıtı almak için kendi kimliğini doğrulamalıdır.
+
+f. 403 - Yasak
+İstemcinin içeriğe erişim hakları yoktur, yetkisizdir. Bu nedenler sunucu, istenen kaynağı vermeyi reddeder. 401'in aksine, müşterinin kimliği sunucu tarafından bilinir.
+
+g. 404 - Bulunamadı
+Sunucu istenen kaynağı bulamıyor. Tarayıcıda, URL'nin tanınmadığı anlamına gelir. API'de, uç noktanın geçerli olduğu ancak kaynağın kendisinin geçerli olmadığı anlamına gelebilir.
+Sunucular, bir kaynağın varlığını yetkisiz bir istemciden gizlemek için 403 yerine bu yanıtı gönderebilir.
+
+h. 500 - Dahili Sunucu Hatası
+Sunucu, nasıl başa çıkılacağını bilmediği bir durumla karşılaştı.
+
+i. 502 - Sunucu Hatası
+Sunucunun isteği işlemek için gereken yanıtı almak için bir ağ geçidi olarak çalışırken, geçersiz bir yanıt aldığı anlamına gelir.
+
+
+(English)
+(Sample 2 - Search the following HTTP Status Codes. Write your summary. 200, 201, 301, 400, 401, 403, 404, 500, 502)
+
+HTTP response status codes indicate whether a specific HTTP request has been successfully completed. Responses are grouped in five classes:
+1. Informational responses (100-199)
+2. Successful responses (200-299)
+3. Redirects (300-399)
+4. Client errors (400-499)
+5. Server errors (500-599)
+
+a. 200 - OK
+The request has succeeded. The meaning of the success depends on the HTTP method:
+GET: The resource has been fetched and is transmitted in the message body.
+HEAD: The entity headers are in the message body.
+PUT or POST: The resource describing the result of the action is transmitted in the message body.
+TRACE: The message body contains the request message as received by the server.
+
+b. 201 - Created
+The request has succeeded and a new resource has been created as a result. This is typically the response sent after POST requests, or some PUT requests.
+
+c. 301 - Moved Permanently
+The URL of the requested resource has been changed permanently. The new URL is given in the response.
+
+d. 400 - Bad Request
+The server could not understand the request due to invalid syntax.
+
+e. 401 - Unauthorized
+Although the HTTP standard specifies "unauthorized", semantically this response means "unauthenticated". That is, the client must authenticate itself to get the requested response.
+
+f. 403 - Forbidden
+The client does not have access rights to the content; that is, it is unauthorized, so the server is refusing to give the requested resource. Unlike 401, the client's identity
+is known to the server.
+
+g. 404 - Not Found
+The server can not find the requested resource. In the browser, this means the URL is not recognized. In an API, this can also mean that the endpoint is valid but the resource itself
+does not exist. Servers may also send this response instead of 403 to hide the existence of a resource from an unauthorized client.
+
+h. 500 - Internal Server Error
+The server has encountered a situation it doesn't know how to handle.
+
+i. 502 - Bad Gateway
+This error response means that the server, while working as a gateway to get a response needed to handle the request, got an invalid response.
