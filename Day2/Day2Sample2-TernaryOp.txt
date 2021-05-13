@@ -1,4 +1,4 @@
-﻿    (Türkçe)
+﻿(Türkçe)
 (Ödev 2 - C# dilinde "ternary operatörü" araştırınız. Ternary Operatörü bilmeyen birine yazıyla anlatmanız gerekseydi, nasıl anlatırdınız?)
 
 Anladığım kadarıyla, genellikle elimizde iki değişken ve koşul olduğu zaman, If-else yapısı yerine kullanabileceğimiz bir operatördür.
@@ -30,7 +30,7 @@ Görüldüğü üzere, c sayısını eklediğimizde başta iki değişken ve ü�
 İlk cümlemde söylediğim gibi değişken ve koşul sayımız arttıkça ternary operatörü yerine if-else operatörünü kullanmamız okumak ve yazmak için daha yararlı olacaktır.
 
 
-    (English)
+(English)
 (Sample 2 - Search for "ternary operator" in C # language. If you had to write to someone who does not know the Ternary Operator, how would you describe it?)
 
 This is called also the conditional operator. It is the short form of the if-else conditions.
