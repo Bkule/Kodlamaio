@@ -31,8 +31,8 @@ f. 403 - Yasak
 İstemcinin içeriğe erişim hakları yoktur, yetkisizdir. Bu nedenler sunucu, istenen kaynağı vermeyi reddeder. 401'in aksine, müşterinin kimliği sunucu tarafından bilinir.
 
 g. 404 - Bulunamadı
-Sunucu istenen kaynağı bulamıyor. Tarayıcıda, URL'nin tanınmadığı anlamına gelir. API'de, uç noktanın geçerli olduğu ancak kaynağın kendisinin geçerli olmadığı anlamına gelebilir.
-Sunucular, bir kaynağın varlığını yetkisiz bir istemciden gizlemek için 403 yerine bu yanıtı gönderebilir.
+Sunucu istenen kaynağı bulamıyor. Tarayıcıda, URL'nin tanınmadığı anlamına gelir. API'de, uç noktanın geçerli olduğu ancak kaynağın kendisinin geçerli olmadığı anlamına 
+gelebilir. Sunucular, bir kaynağın varlığını yetkisiz bir istemciden gizlemek için 403 yerine bu yanıtı gönderebilir.
 
 h. 500 - Dahili Sunucu Hatası
 Sunucu, nasıl başa çıkılacağını bilmediği bir durumla karşılaştı.
@@ -68,15 +68,16 @@ d. 400 - Bad Request
 The server could not understand the request due to invalid syntax.
 
 e. 401 - Unauthorized
-Although the HTTP standard specifies "unauthorized", semantically this response means "unauthenticated". That is, the client must authenticate itself to get the requested response.
+Although the HTTP standard specifies "unauthorized", semantically this response means "unauthenticated". That is, the client must authenticate itself to get the requested
+response.
 
 f. 403 - Forbidden
-The client does not have access rights to the content; that is, it is unauthorized, so the server is refusing to give the requested resource. Unlike 401, the client's identity
-is known to the server.
+The client does not have access rights to the content; that is, it is unauthorized, so the server is refusing to give the requested resource. Unlike 401, the client's
+identity is known to the server.
 
 g. 404 - Not Found
-The server can not find the requested resource. In the browser, this means the URL is not recognized. In an API, this can also mean that the endpoint is valid but the resource itself
-does not exist. Servers may also send this response instead of 403 to hide the existence of a resource from an unauthorized client.
+The server can not find the requested resource. In the browser, this means the URL is not recognized. In an API, this can also mean that the endpoint is valid but the
+resource itself does not exist. Servers may also send this response instead of 403 to hide the existence of a resource from an unauthorized client.
 
 h. 500 - Internal Server Error
 The server has encountered a situation it doesn't know how to handle.
